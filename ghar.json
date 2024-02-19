@@ -1,0 +1,41 @@
+{
+  "interns": [
+    {
+      "id": "1",
+      "name": "gorey don",
+      "paisa": 100
+    },
+    {
+      "id": "2",
+      "name": "alchhi vai",
+      "paisa": 200
+    },
+    {
+      "id": "3",
+      "name": "trump daju",
+      "paisa": 500
+    },
+    {
+      "id": "a9b9",
+      "name": "trump",
+      "paisa": 500
+    }
+  ],
+  "thegos": [
+    {
+      "id": "1",
+      "text": "ye apun ka style hai",
+      "internId": "1"
+    },
+    {
+      "id": "2",
+      "text": "ill do it some other time",
+      "internId": "2"
+    },
+    {
+      "id": "3",
+      "text": "wow, its gonna be yuge, china!",
+      "internId": "3"
+    }
+  ]
+}
