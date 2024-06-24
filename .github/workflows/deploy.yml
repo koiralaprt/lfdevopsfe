@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest 
 
     steps:
@@ -30,24 +30,5 @@ jobs:
     - name: Build Project
       run: yarn build
 
-    - name: Upload artifact for GitHub Pages
-      uses: actions/upload-pages-artifact@v1
-      with:
-        name: github-pages
-        path: ./dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-        pages: write      # to deploy to Pages
-        id-token: write
-    # Deploy to the github-pages environment
-    environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
-  
-    steps:
-        - name: Deploy to GitHub Pages
-          id: deployment
-          uses: actions/deploy-pages@v1
+    - name: Deploy to netlify
+      run: netlify deploy --site "${{secrets.NETLIFY_APP_ID}}" --auth "${{secrets.NETLIFY_TOKEN}}" --dir "dist" --prod
